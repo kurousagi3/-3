@@ -1,0 +1,241 @@
+*{
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+	color: black;
+}
+section p,td p{
+	width: 90%;
+	word-wrap: normal;
+	text-align: left;
+}
+h2{
+	color: #9a621c;
+}
+header{
+	background-color: #cbd835;
+	position: fixed;
+	height: 12%;
+	top: 0;
+	z-index: 999;
+}
+header img{
+	width: 20%;
+}
+@media screen and (min-width:480px) { 
+	header img{width: 50px;}
+}
+.logo{
+	position: absolute;
+	margin: 0;
+	top: 10px;
+	color: #9a621c;
+}
+.nav-drawer{
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+@media screen and (min-width:480px) {
+	.nav-drawer{width: 20%;}
+}
+.nav-unshown {
+  display:none;
+}
+#nav-open {
+  display: inline-block;
+}
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 4px;/*線の太さ*/
+  width: 40px;/*長さ*/
+  background: black;
+  display: block;
+  content: '';
+  cursor: pointer;
+  z-index: 9999;  
+}
+@media screen and (min-width:480px) {
+	#nav-open span, #nav-open span:before, #nav-open span:after{
+		display:none;}
+}
+#nav-open span:before {
+  bottom: -15px;
+}
+#nav-open span:after {
+  bottom: -30px;
+}
+#nav-input:checked ~ #nav-open span{
+	background: transparent;
+}
+#nav-input:checked ~ #nav-open span:before{
+ 	-webkit-transform: rotate(-45deg);
+ 	transform: rotate(-45deg);
+ 	top: 15px;
+}
+#nav-input:checked ~ #nav-open span:after{
+ 	-webkit-transform: rotate(45deg);
+ 	transform: rotate(45deg);
+ 	top: 15px;
+ }
+/*中身*/
+.global-nav {
+	 position: fixed;
+	 top: 12%;
+	 left: 0px;
+	 background: #d9dcb594;
+	 transition: .3s ease-in-out;/*表示*/
+	 transform: translateY(-325%);/*上にかくしておく*/
+}
+@media screen and (min-width:480px) {
+	.global-nav {
+		top: 12%;
+		width: 20%;
+		height: 100%;
+		background-color: #0a1f40;
+		transition: .3s ease-in-out;
+		transform: translateY(0);}/*通常表示く*/
+}
+.global-nav ul{
+	list-style: none;
+}
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: 0.5;
+}
+#nav-input:checked ~ .global-nav {
+  transform: translateY(0%);/*中身を表示*/
+  z-index: 99;
+}	
+.global-nav ul{
+	padding: 5px 0;
+	margin: 0;
+}
+.global-nav li{
+	margin: 3px;
+}
+@media screen and (min-width:480px) {
+	.global-nav li,.global-nav li a{
+		margin: 20px auto;
+		color: #e6da49;}
+}
+.slider{
+	margin-top: 20%;
+	height: 170px;
+	position: relative;
+	overflow: hidden;
+}
+@media screen and (min-width:480px) {
+	.slider{
+	left: 20%;
+	width: 80%;
+	margin: 0;
+	margin-top: 8%;}
+}
+.slider img{
+	animation: 10s infinite;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+}
+@media screen and (min-width:480px) {
+	.slider img{
+	animation: 10s infinite;
+	opacity: 0;
+	position: absolute;}  
+	/*あとで0にする*/
+}
+@keyframes show {
+    0% {opacity:0.3}
+    10% {opacity:0.5}
+    20% {opacity:1}
+    98% {opacity:0.8}
+    100%{transform: translateX(-100%);}
+}
+.slider img:nth-of-type(1){
+	animation-name: show;
+}
+.slider img:nth-of-type(2){
+	animation-name: show;
+	animation-delay: 10s;
+}
+.slider img:nth-of-type(3){
+	animation-name: show;
+	animation-delay: 20s;
+}
+.slider img:nth-of-type(4){
+	animation-name: show;
+	animation-delay: 30s;
+}
+.slider img:nth-of-type(5){
+	animation-name: show;
+	animation-delay: 40s;
+}
+.slider img:nth-of-type(6){
+	animation-name: show;
+	animation-delay: 50s;
+}
+main{
+	width: 90%;
+	padding: 5px 10px 5pc 30px;
+}
+@media screen and (min-width:480px) {
+	main{
+		width: 80%;
+		position: relative;
+		left: 20%;}
+}
+section{
+	padding: 5px;
+	width: 90%;
+}
+@media screen and (min-width:480px) {
+	section{
+		margin: 30px auto;
+		width: 70%;}
+}
+
+@media screen and (min-width:480px) {
+	article table{
+		width: 80%;
+		margin: auto;}
+}
+th,td{
+	width: 30%;
+	vertical-align: top;
+}
+@media screen and (min-width:480px) {
+	th,td{
+		width: 20%;
+		padding: 0 0 10px 10px;}
+}
+footer{
+	background-color: #0a1f40;
+	color: white;
+	margin-bottom: 0;
+}
+footer p{
+	color: white;
+}
+footer{
+	position: relative;
+	background-color: #0a1f40;
+	color: white;
+	margin-bottom: 0;
+}
+@media screen and (min-width:480px) {
+	footer{
+	position: relative;
+	left: 20%;
+	width: 80%;}
+}
+@media screen and (min-width:480px) {
+	.map{
+		padding: 15px;}
+}
+@media screen and (min-width:480px) {
+	iframe{
+		width: 80%;}
+}
