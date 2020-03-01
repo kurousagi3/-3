@@ -5,8 +5,9 @@
 	font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
 	color: black;
 }
-section p,td p{
+section p{
 	width: 90%;
+	margin: auto;
 	word-wrap: normal;
 	text-align: left;
 }
@@ -23,9 +24,6 @@ header{
 header img{
 	width: 20%;
 }
-@media screen and (min-width:480px) { 
-	header img{width: 50px;}
-}
 .logo{
 	position: absolute;
 	margin: 0;
@@ -36,9 +34,6 @@ header img{
     position: absolute;
     top: 0;
     left: 20px;
-}
-@media screen and (min-width:480px) {
-	.nav-drawer{width: 20%;}
 }
 .nav-unshown {
   display:none;
@@ -56,10 +51,7 @@ header img{
   cursor: pointer;
   z-index: 9999;  
 }
-@media screen and (min-width:480px) {
-	#nav-open span, #nav-open span:before, #nav-open span:after{
-		display:none;}
-}
+
 #nav-open span:before {
   bottom: -15px;
 }
@@ -88,15 +80,6 @@ header img{
 	 transition: .3s ease-in-out;/*表示*/
 	 transform: translateY(-325%);/*上にかくしておく*/
 }
-@media screen and (min-width:480px) {
-	.global-nav {
-		top: 12%;
-		width: 20%;
-		height: 100%;
-		background-color: #0a1f40;
-		transition: .3s ease-in-out;
-		transform: translateY(0);}/*通常表示く*/
-}
 .global-nav ul{
 	list-style: none;
 }
@@ -116,45 +99,28 @@ header img{
 .global-nav li{
 	margin: 3px;
 }
-@media screen and (min-width:480px) {
-	.global-nav li,.global-nav li a{
-		margin: 20px auto;
-		color: #e6da49;}
-}
-.slider{
+#slider{
 	margin-top: 20%;
-	height: 158px;
 	position: relative;
 	overflow: hidden;
-	background-color: black;
+	background-size: cover;
 }
-@media screen and (min-width:480px) {
-	.slider{
-	left: 20%;
-	width: 80%;
-	height: 350px;
-	margin: 0;
-	margin-top: 4%;}
+#slider img{
+		width: 100%;
 }
-.slider img{
+/*.slider img{
 	animation: 10s infinite;
 	margin: 0;
 	opacity: 0;
 	position: absolute;
-}
-@media screen and (min-width:480px) {
-	.slider img{
-	animation: 10s infinite;
-	opacity: 0;
-	position: absolute;}  
-	/*あとで0にする*/
-}
-@keyframes show {
-    0% {opacity:0.3}
+}*/
+/*@keyframes show {
     10% {opacity:0.5}
     20% {opacity:1}
-    98% {opacity:0.8}
-    100%{transform: translateX(-100%);}
+    90%{opacity:1}
+    95%{opacity:0.5}
+    100%{opacity:0.3}
+    100%{transform: translateX(-50%);}
 }
 .slider img:nth-of-type(1){
 	animation-name: show;
@@ -167,7 +133,7 @@ header img{
 	animation-name: show;
 	animation-delay: 20s;
 }
-.slider img:nth-of-type(4){
+.slider img:nt4-of-type(4){
 	animation-name: show;
 	animation-delay: 30s;
 }
@@ -178,46 +144,75 @@ header img{
 .slider img:nth-of-type(6){
 	animation-name: show;
 	animation-delay: 50s;
+}*/
+/*
+@keyframes slide1 {
+	0% {opacity: 0; transform: scale(1);}
+	10% {opacity: 1;}
+	40% {transform: scale(1.05);}
+	50% {opacity: 1;}
+	60% {opacity: 0;}
+	100% {opacity: 0;}
+}*/
+/*２枚目*/
+/*@keyframes slide2 {
+	0% {opacity: 0;}
+	25% {opacity: 0; transform: scale(1);}
+	35% {opacity: 1;}
+	65% {transform: scale(1.05);}
+	75% {opacity: 1;}
+	85% {opacity: 0;}
+	100% {opacity: 0;}
 }
+.slide1,.slide2,.slide3,.slide4,.slide5{
+	animation-duration: 10s;	実行する時間。「s」は秒の事。
+	animation-iteration-count:infinite;		/*実行する回数。「infinite」は無限に繰り返す意味。
+	position: absolute;left:0px;top:0px;width: 100%;height: auto;
+	animation-fill-mode: both; /*「待機中＝最初のキーフレームの状態で待機」で、「実行後＝最後のキーフレームの状態でストップ」
+	animation-timing-function: linear;
+	animation-delay: 5s;
+}
+/*土台画像*/
+/*.slide0 {
+	position: relative;width: 100%;height: auto;
+}*/
+/*１枚目*/
+/*.slide1 {
+	animation-name: slide1;		上で設定しているキーフレーム（keyframes）の名前
+}
+/*２枚目*/
+/*.slide2 {
+	animation-name: slide2;		/*上で設定しているキーフレーム（keyframes）の名前
+}*/
+/*.slide3 {
+	animation-name: slide3;		/*上で設定しているキーフレーム（keyframes）の名前
+}*/
+/*.slide4 {
+	animation-name: slide4;		/*上で設定しているキーフレーム（keyframes）の名前
+}*/	
+/*.slide5 {
+	animation-name: slide5;		/*上で設定しているキーフレーム（keyframes）の名前
+}*/
+
 main{
 	width: 90%;
-	padding: 5px 10px 5pc 30px;
-}
-@media screen and (min-width:480px) {
-	main{
-		width: 80%;
-		position: relative;
-		left: 20%;}
+	padding: 5px 05px;
+	margin: auto;
 }
 section{
 	padding: 5px;
-	width: 90%;
 }
-@media screen and (min-width:480px) {
-	section{
-		margin: 30px auto;
-		width: 70%;}
+article{
+	text-align: center;
+}
+tr,td,th{
+	display: block;
+}
+tr{
+	margin-bottom: 20px;
 }
 
-@media screen and (min-width:480px) {
-	article table{
-		width: 80%;
-		margin: auto;}
-}
-th,td{
-	width: 30%;
-	vertical-align: top;
-}
-@media screen and (min-width:480px) {
-	th,td{
-		width: 20%;
-		padding: 0 0 10px 10px;}
-}
-footer{
-	background-color: #0a1f40;
-	color: white;
-	margin-bottom: 0;
-}
+
 footer p{
 	color: white;
 }
@@ -227,17 +222,94 @@ footer{
 	color: white;
 	margin-bottom: 0;
 }
-@media screen and (min-width:480px) {
-	footer{
-	position: relative;
-	left: 20%;
-	width: 80%;}
+.map{
+	width: 90%;
+	margin: auto;
 }
-@media screen and (min-width:480px) {
+/*スマホサイト*/
+@media screen and (min-width:480px) { 
+	header img{width: 50px;}
+	.nav-drawer{width: 20%;}
+	#nav-open span, #nav-open span:before, #nav-open span:after{
+		display:none;}
+	.global-nav {
+		top: 12%;
+		width: 20%;
+		height: 100%;
+		background-color: #0a1f40;
+		transition: .3s ease-in-out;
+		transform: translateY(0);}/*通常表示く*/
+	#slider{
+		height: 350px;
+		margin: 0;
+		margin-top: 4%;}
+/*	#slider img{
+		animation: 10s infinite;
+		position: absolute;}  */
+	main{
+		position: relative;
+		left: 10%;}
+	section{
+		margin: 30px auto;
+		width: 70%;}
+	article{
+		width:90%;
+		margin: auto;
+		position: relative;
+	    top: 0;}
+	table{
+		width: 90%;
+		margin: auto;
+		display: flex;}
+	th,td{
+		width: 80%;
+		margin: 5px;}
+	tr{
+		height: 30%;
+	}
+
+	.tr1,.tr2,.tr3,.tr4,.tr5,.tr6,.tr7,.tr8,.tr9{
+		display: block;
+		position: absolute;
+		width: 30%;
+		vertical-align: top;}
+	.tr1{
+		top:10px;}
+	.tr2{
+		top: 10px;
+		left: 34%;}
+	.tr3{
+		top: 10px;
+		left: 62%;}
+	.tr4{
+		top: 350px;}
+	.tr5{
+		top: 350px;
+		left: 34%;}
+	.tr6{
+		top: 350px;
+		left: 62%;}
+	.tr7{
+		top: 700px;}
+	.tr8{
+		top: 700px;
+		left: 34%;}
+	.tr9{
+		top: 700px;
+		left: 62%;}
+
+	.global-nav li,.global-nav li a{
+		margin: 20px auto;
+		color: #e6da49;}	
+	footer{
+		position: fixed;
+		bottom: 0;		
+		left: 20%;
+		width: 80%;
+		height: 100px;}
 	.map{
 		padding: 15px;}
-}
-@media screen and (min-width:480px) {
 	iframe{
 		width: 80%;}
-}
+
+
